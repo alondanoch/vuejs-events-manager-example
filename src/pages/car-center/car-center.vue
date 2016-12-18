@@ -3,14 +3,15 @@
   <section class="car-center">
     <h1>Cars Center</h1>
     <car-list></car-list>
+    <div>{{EventsData}}</div>
   </section>
 
 </template>
 
 <script lang="js">
 
-  import CarList from 'src/components/car-list/car-list'
-
+  import CarList from 'src/components/car-list/car-list';
+  import EventsData from 'src/assets/data/eventsData.js';
 
   export default  {
     name: 'car-center',
@@ -20,7 +21,7 @@
     },
     data() {
       return {
-
+        EventsData
       }
     },
     methods: {

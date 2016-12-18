@@ -7,6 +7,7 @@ import Home from './pages/home';
 import About from './pages/about';
 import Contact from './pages/contact/contact';
 import CarCenter from './pages/car-center/car-center';
+import EventoCenter from './pages/evento-center';
 
 // Components
 import MainNav from './components/main-nav';
@@ -17,7 +18,11 @@ Vue.use(VueRouter);
 const routes = [
       {
         path: '/',
-        component: Home
+        component: EventoCenter
+      },
+      {
+        path: 'evento-center',
+        component: EventoCenter
       },
       {
         path: '/contact',
