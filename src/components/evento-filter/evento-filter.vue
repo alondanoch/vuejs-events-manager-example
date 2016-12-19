@@ -2,8 +2,10 @@
 
 
   <section class="evento-filter">
-    <h3>filter by name:</h3>
-    <input type="text" v-on:input="updateValue($event.target.value)">
+    <h3>
+      filter by name:
+      <input type="text" class="filterInput" v-on:input="updateValue($event.target.value)">
+    </h3>
   </section>
 </template>
 
@@ -40,9 +42,5 @@
 </script>
 
 <style scoped lang="scss">
-  .evento-wrapper {
-    height: 350px;
-    
-
-  }
+  
 </style>

@@ -2,21 +2,23 @@
 
 
   <section class="evento-group-list">
-    <h3>{{nameList}}</h3>
+    <div class="page-header">
+      <h3>{{nameList}}</h3>
+    </div>
     <div class="row">
       <div class="evento-wrapper col-xs-18 col-sm-4" v-for="event of eventsList">
-          <evento-preview class="card"  v-bind:event="event"></evento-preview>
+        <evento-preview class="card" v-bind:event="event"></evento-preview>
       </div>
 
     </div>
-    
+
   </section>
 </template>
 
 <script lang="js">
   import EventoPreview from '../evento-preview/evento-preview';
 
-  export default  {
+  export default {
     name: 'evento-group-list',
     props: ['eventsList', 'nameList'],
     mounted() {
@@ -35,7 +37,7 @@
     components: {
       EventoPreview
     }
-}
+  }
 </script>
 
 <style scoped lang="scss">

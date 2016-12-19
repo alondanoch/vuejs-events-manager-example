@@ -1,7 +1,7 @@
 <template lang="html">
 
   <section class="contact">
-    <h1>contact Component</h1>
+    <h1>Contact Component</h1>
   </section>
 
 </template>

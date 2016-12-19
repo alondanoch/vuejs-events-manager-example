@@ -2,7 +2,6 @@
 
 
   <section class="car-list">
-    <h3>evento-group</h3>
     <div class="row">
       <div v-for="(dataList, index) in DataGroups">
         <evento-group-list class="card" v-bind:eventsList="dataList" v-bind:nameList="getNameList(index)"></evento-group-list>
