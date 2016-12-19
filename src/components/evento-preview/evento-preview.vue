@@ -1,5 +1,6 @@
 <template lang="html">
 
+<router-link :to="{ path: '/evento-details/' + event.id}">
   <section class="evento-preview thumbnail">
     <!--<img class="img-responsive" :src="" alt="">-->
     <div class="caption">
@@ -9,6 +10,7 @@
       <!--<p v-html="rawHtml">{{event.description}}</p>-->
     </div>
   </section>
+</router-link>
 
 </template>
 

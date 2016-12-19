@@ -1,0 +1,14 @@
+<div>
+  <div class="container">
+    <div class="">
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1 class="panel-title">{{evento.name}}</h1>
+          <h5>{{evento.status}} | {{getTime()}}</h5>
+        </div>
+        <div class="panel-body" v-html="evento.description"></div>
+      </div>
+    </div>
+  </div>
+</div>

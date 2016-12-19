@@ -8,6 +8,7 @@ import About from './pages/about';
 import Contact from './pages/contact/contact';
 import CarCenter from './pages/car-center/car-center';
 import EventoCenter from './pages/evento-center';
+import EventoDetails from './pages/evento-details';
 
 // Components
 import MainNav from './components/main-nav';
@@ -18,11 +19,19 @@ Vue.use(VueRouter);
 const routes = [
       {
         path: '/',
+        component: Home
+      },
+      {
+        path: '/evento-center',
         component: EventoCenter
       },
       {
-        path: 'evento-center',
+        path: '/evento-details',
         component: EventoCenter
+      },
+      {
+        path: '/evento-details/:id',
+        component: EventoDetails
       },
       {
         path: '/contact',
