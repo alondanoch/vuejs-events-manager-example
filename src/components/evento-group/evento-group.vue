@@ -2,21 +2,23 @@
 
 
   <section class="car-list">
-    <h3>evento-group List</h3>
+    <h3>evento-group</h3>
     <div class="row">
-        <evento-group-list class="card" v-bind:eventsList="eventsListGroups"></evento-group-list>
-
+      <div v-for="(dataList, index) in DataGroups">
+        <evento-group-list class="card" v-bind:eventsList="dataList" v-bind:nameList="getNameList(index)"></evento-group-list>
+      </div>
     </div>
     
   </section>
 </template>
 
 <script lang="js">
+  import moment from 'moment';
   import EventoGroupList from '../evento-group-list/evento-group-list';
   
   export default  {
     name: 'evento-group',
-    props: ['Data'],
+    props: ['DataGroups'],
     mounted() {
         //console.log('evento-group Data', this.Data);
     },
@@ -27,10 +29,12 @@
       }
     },
     methods: {
-
+      getNameList: function(dayInYear){
+        return moment().dayOfYear(dayInYear).format("DD-MM-YYYY");
+      }
     },
     computed: {
-
+      
     },
     components: {
       EventoGroupList

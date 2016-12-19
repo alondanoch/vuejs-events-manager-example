@@ -17,8 +17,7 @@
     name: 'evento-preview',
     props: ['event'],
     mounted() {
-      console.log('ssds');
-      console.log('evento-preview this.event: ',this.event);
+      //console.log('evento-preview this.event: ',this.event);
     },
     data() {
       return {
@@ -34,12 +33,22 @@
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
   .evento-preview{
+    .caption{
+      height: 100px;
+    }
     .evento-description {
         height: 200px;
         overflow: auto;
         font-size: 12px;
+        word-wrap: break-word;
+
+        p {
+          img {
+            width: 100%;
+          }
+        }
     }
   }
 </style>
