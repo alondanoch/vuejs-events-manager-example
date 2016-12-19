@@ -3,6 +3,8 @@
     <div class="">
       <h1>Up comming Meetup events</h1>
       <p>filter the events</p>
+      
+      <evento-filter v-model="filterByName"/>
       <evento-group v-bind:DataGroups="EventsDataGroups"></evento-group>
     </div>
   </div>

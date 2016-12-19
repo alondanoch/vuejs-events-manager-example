@@ -1,5 +1,6 @@
 import moment from 'moment';
 import EventoGroup from 'src/components/evento-group/evento-group';
+import EventoFilter from 'src/components/evento-filter/evento-filter';
 import EventsData from 'src/assets/data/eventsData.js';
 
 export default  {
@@ -22,6 +23,7 @@ export default  {
     },
     data() {
       return {
+        filterByName: '',
         //EventsData: EventsData.events 
       }
     },
@@ -30,7 +32,17 @@ export default  {
     },
     computed: {
       EventsDataGroups: function () {
-        return EventsData.events.reduce((groups, evento) => {
+        let eventsDataGroups;
+        if (this.filterByName){
+          let that = this;
+          eventsDataGroups = EventsData.events.filter((evento) => {
+            return (evento.name.toLowerCase().indexOf(that.filterByName.toLowerCase()) !== -1)
+          });
+        }
+        else{
+          eventsDataGroups = EventsData.events;
+        }
+        return eventsDataGroups.reduce((groups, evento) => {
           let key = moment(evento.time).dayOfYear();
           (groups[key] = groups[key] || []).push(evento);
           return groups;
@@ -38,6 +50,7 @@ export default  {
       }
     },
     components: {
-      EventoGroup
+      EventoGroup,
+      EventoFilter
     }
 }
