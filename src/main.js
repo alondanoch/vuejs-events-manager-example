@@ -6,9 +6,10 @@ import VueRouter from 'vue-router';
 import Home from './pages/home';
 import About from './pages/about';
 import Contact from './pages/contact/contact';
-import CarCenter from './pages/car-center/car-center';
 import EventoCenter from './pages/evento-center';
 import EventoDetails from './pages/evento-details';
+import EventoEdit from './pages/evento-edit';
+import EventoNew from './pages/evento-new';
 
 // Components
 import MainNav from './components/main-nav';
@@ -34,14 +35,21 @@ const routes = [
         component: EventoDetails
       },
       {
+        path: '/evento-edit',
+        component: EventoCenter
+      },
+      {
+        path: '/evento-edit/:id',
+        component: EventoEdit
+      },
+      {
+        path: '/evento-new',
+        component: EventoNew
+      },
+      {
         path: '/contact',
         component: Contact
       },
-      {
-        path: '/car-center',
-        component: CarCenter
-      },
-
       {
         path: '/about',
         component: About

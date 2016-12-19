@@ -1,0 +1,20 @@
+<div>
+  <div class="container">
+    <div class="">
+      <h1>Edit Mode:</h1>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1 class="panel-title">
+            <input type="text" v-model="evento.name">
+          </h1>
+          <h5>
+            <input type="text" v-model="evento.status"> | {{getTime()}}</h5>
+        </div>
+        <div class="panel-body">
+          <textarea v-model="evento.description" placeholder="add multiple lines"></textarea>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-default" v-on:click="navigateToMainView"><span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Save</button>
+  </div>
+</div>

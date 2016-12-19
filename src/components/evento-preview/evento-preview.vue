@@ -1,21 +1,25 @@
 <template lang="html">
 
-<router-link :to="{ path: '/evento-details/' + event.id}">
   <section class="evento-preview thumbnail">
     <!--<img class="img-responsive" :src="" alt="">-->
-    <div class="caption">
-      <h4>{{event.name}}</h4>
-    </div>  
-    <div class="evento-description" v-html="event.description">
-      <!--<p v-html="rawHtml">{{event.description}}</p>-->
-    </div>
+    <router-link :to="{ path: '/evento-edit/' + event.id}">
+      <button type="button" class="btn btn-default">Edit</button>
+    </router-link>
+
+    <router-link :to="{ path: '/evento-details/' + event.id}">
+      <div class="caption">
+        <h4>{{event.name}}</h4>
+      </div>
+      <div class="evento-description" v-html="event.description">
+        <!--<p v-html="rawHtml">{{event.description}}</p>-->
+      </div>
+    </router-link>
   </section>
-</router-link>
 
 </template>
 
 <script lang="js">
-  export default  {
+  export default {
     name: 'evento-preview',
     props: ['event'],
     mounted() {
@@ -32,7 +36,7 @@
     computed: {
 
     }
-}
+  }
 </script>
 
 <style lang="scss">

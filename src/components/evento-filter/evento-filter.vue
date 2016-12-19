@@ -19,7 +19,7 @@
       }
     },
     mounted() {
-      console.log('evento-group-list this.eventsList: ', this.eventsList + " | " + this.nameList)
+      //console.log('evento-group-list this.eventsList: ', this.eventsList + " | " + this.nameList)
     },
     data() {
       return {

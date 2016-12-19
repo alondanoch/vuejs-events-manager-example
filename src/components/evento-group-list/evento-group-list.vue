@@ -20,7 +20,7 @@
     name: 'evento-group-list',
     props: ['eventsList', 'nameList'],
     mounted() {
-      console.log('evento-group-list this.eventsList: ',this.eventsList + " | " + this.nameList)
+      //console.log('evento-group-list this.eventsList: ',this.eventsList + " | " + this.nameList)
     },
     data() {
       return {
