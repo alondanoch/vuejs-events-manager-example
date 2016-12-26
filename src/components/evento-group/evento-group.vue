@@ -4,7 +4,7 @@
   <section class="car-list">
     <div class="row">
       <div v-for="(dataList, index) in DataGroups">
-        <evento-group-list class="card" v-bind:eventsList="dataList" v-bind:nameList="getNameList(index)"></evento-group-list>
+        <evento-group-list class="card" v-bind:eventsList="dataList" v-bind:nameList="index"></evento-group-list>
       </div>
     </div>
     
@@ -28,9 +28,9 @@
       }
     },
     methods: {
-      getNameList: function(dayInYear){
-        return moment().dayOfYear(dayInYear).format("DD-MM-YYYY");
-      }
+      // getNameList: function(dayInYear){
+      //   return moment().dayOfYear(dayInYear).format("DD-MM-YYYY");
+      // }
     },
     computed: {
       
