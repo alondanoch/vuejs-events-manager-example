@@ -1,5 +1,6 @@
 import style from './style.scss';
 import Vue from 'vue'
+import VueResource from 'vue-resource'
 import VueRouter from 'vue-router';
 
 // Pages
@@ -15,6 +16,7 @@ import EventoNew from './pages/evento-new';
 import MainNav from './components/main-nav';
 import AppFooter from './components/app-footer';
 
+Vue.use(VueResource);
 Vue.use(VueRouter);
 
 const routes = [

@@ -11,7 +11,7 @@ app.use('/', express.static(__dirname));
 
 app.get('/events-data', (req, res) => {
   //res.json({res: 'devetdata'})
-  fetch('https://api.meetup.com/recommended/events?photo-host=public&page=20&sig_id=117557282&lon=34.855499&lat=32.109333&sig=2aded0948a22d341fa2d23a3a13ca1db7d5e9741')
+  fetch('https://api.meetup.com/recommended/events?photo-host=public&page=40&lon=34.855499&lat=32.109333&key=3b282661651b31583a666a6f13744a13')
     .then(function (res) {
       return res.json();
     }).then(function (json) {
