@@ -1,7 +1,7 @@
 import moment from 'moment';
 import EventoGroup from 'src/components/evento-group/evento-group';
 import EventoFilter from 'src/components/evento-filter/evento-filter';
-//import EventsData from 'src/assets/data/eventsData.js';
+import EventsData from 'src/assets/data/eventsData.js';
 
 
 export default {
@@ -18,7 +18,6 @@ export default {
     // console.log('DataArrByDate1', DataArrByDate);
   },
   mounted() {
-    this.getEvents();
   },
   data() {
     return {
@@ -28,30 +27,29 @@ export default {
     }
   },
   methods: {
-    getEvents() {
-      this.$http.get(`/events-data`)
-        .then(res => res.json())
-        .then(eventsData => this.EventsData = eventsData);
-    }
+    
   },
   computed: {
     EventsDataGroups: function () {
       let eventsDataGroups;
-      if (!this.EventsData){
+      if (!EventsData){
         return [];
+      }
+      else{
+        console.log('EventsData', EventsData);
       }
 
       if (this.filterByName) {
         let that = this;
-        eventsDataGroups = this.EventsData.filter((evento) => {
+        eventsDataGroups = EventsData.events.filter((evento) => {
           return (evento.name.toLowerCase().indexOf(that.filterByName.toLowerCase()) !== -1)
         });
       }
       else {
-        eventsDataGroups = this.EventsData;
+        eventsDataGroups = EventsData.events;
       }
       return eventsDataGroups.reduce((groups, evento) => {
-        let key = moment(evento.time).dayOfYear();
+        let key = moment(evento.time).format('DD-MM-YYYY');
         (groups[key] = groups[key] || []).push(evento);
         return groups;
       }, {});
