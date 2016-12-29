@@ -8,7 +8,7 @@ var dayInMili = 86400000;
 
 
 app = express();
-//app.use('/', express.static(__dirname));
+app.use('/', express.static(__dirname));
 
 app.get('/events-data', (req, res) => {
   res.json(eventsData)
@@ -29,7 +29,7 @@ var updateMeetupEvetnsRecomended = function () {
     }).then(function (jsonData) {
       eventsData = jsonData;
     });
-
+    
 }
 
 
