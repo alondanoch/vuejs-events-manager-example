@@ -22,7 +22,6 @@ app.listen(port, function () {
 
 
 var updateMeetupEvetnsRecomended = function () {
-
   fetch('https://api.meetup.com/recommended/events?photo-host=public&page=40&lon=34.855499&lat=32.109333&key=3b282661651b31583a666a6f13744a13')
     .then(function (res) {
       return res.json();
