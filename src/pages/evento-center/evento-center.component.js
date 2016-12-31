@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       filterByName: '',
-      EventsData: []
+      eventsData: EventsData
       //EventsData: EventsData.events 
     }
   },
@@ -32,21 +32,21 @@ export default {
   computed: {
     EventsDataGroups: function () {
       let eventsDataGroups;
-      if (!EventsData){
+      if (!this.eventsData){
         return [];
       }
       else{
-        console.log('EventsData', EventsData);
+        console.log('EventsData', this.eventsData);
       }
 
       if (this.filterByName) {
         let that = this;
-        eventsDataGroups = EventsData.events.filter((evento) => {
+        eventsDataGroups = this.eventsData.events.filter((evento) => {
           return (evento.name.toLowerCase().indexOf(that.filterByName.toLowerCase()) !== -1)
         });
       }
       else {
-        eventsDataGroups = EventsData.events;
+        eventsDataGroups = this.eventsData.events;
       }
       return eventsDataGroups.reduce((groups, evento) => {
         let key = moment(evento.time).format('DD-MM-YYYY');
@@ -54,6 +54,9 @@ export default {
         return groups;
       }, {});
     }
+  },
+  watch:{
+
   },
   components: {
     EventoGroup,
