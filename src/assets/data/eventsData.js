@@ -702,7 +702,11 @@ if (process.env.NODE_ENV == 'development') {
     }
 }
 else {
-    fetch('/events-data')
+    let url = 'localhost:3003/events-data';
+    if (process.env.NODE_ENV !== 'development') {
+        url = '/events-data';
+    }
+    fetch(url)
         .then(function (res) {
             return res.json();
         }).then(function (jsonData) {
